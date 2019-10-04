@@ -1,0 +1,141 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "jobs"
+    label: "Job Openings"
+    folder: "src/pages/jobs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "job-post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "SubTitle", name: "subtitle", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Active", name: "isActive", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "partners"
+    label: "Partners"
+    folder: "src/pages/partners"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "partner-post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "SubTitle", name: "subtitle", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Url", name: "url", widget: "string" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Active", name: "isActive", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "press-releases"
+    label: "Press Releases"
+    folder: "src/pages/press"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "press-release" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Url", name: "url", widget: "string" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Sort Order", name: "sortOrder", widget: "number", valueType: "int" }
+      - { label: "Active", name: "isActive", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+          - {
+              label: Secondarypitch,
+              name: secondarypitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                ],
+            }
+          - { label: Description, name: description, widget: string }
+
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/pages/partners/index.md"
+        label: "Partners"
+        name: "partners"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "partners-page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: Partners List,
+              name: partnerList,
+              widget: list,
+              fields:
+                [
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Partner Name", name: "partnerName", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                ],
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/pages/products/index.md"
+        label: "Products"
+        name: "products"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "product" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/pages/solutions/index.md"
+        label: "Solutions"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "solution" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/pages/press/index.md"
+        label: "Press"
+        name: "press"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "menu-page" }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Description, name: description, widget: string }

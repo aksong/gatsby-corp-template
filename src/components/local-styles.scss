@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+// If need, change your variables before importing Bulma
+$title-color: #0d1b3f;
+
+$brand-color: #0d1b3f;
+$brand-color-invert: #fff;
+$menu-text-color: #fff;
+
+$primary: $brand-color;
+$primary-invert: $brand-color-invert;
+$body-color: #333;
+$black: #0d1b3f;
+$footer-background-color: $brand-color;
+
+$navbar-item-hover-color: $brand-color-invert;
+
+$navbar-item-hover-background-color: $brand-color;
+
+$navbar-tab-active-color: $brand-color-invert;
+$navbar-item-active-color: $brand-color;
+
+@import "~bulma/bulma.sass";
+
+.social {
+  padding: 2em;
+}
+
+.social a {
+  padding: 0.5em 0.5em 0.3em 0.5em;
+  border-radius: 1em;
+  background-color: $white-ter;
+  margin: 0.5em;
+  vertical-align: middle;
+  display: inline;
+}
+
+.press-release-list-item {
+  font-size: 0.9em;
+}
+
+.navbar-item.is-active:hover {
+  color: $brand-color-invert;
+}
+
+.navbar-brand.left-burger {
+  align-items: flex-start;
+}
+
+.navbar-brand.left-burger .navbar-burger {
+  margin-left: 0;
+  margin-right: 0;
+}
