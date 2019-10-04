@@ -21,11 +21,6 @@ module.exports = {
 			instagram: "https://www.instagram.com/",
 			twitter: "https://twitter.com/",
 			facebook: "https://www.facebook.com/"
-		},
-		mapInfo: {
-			googleMapsKey: process.env.GOOGLE_MAPS_KEY,
-			mapCoordLat: process.env.MAP_COORD_LAT,
-			mapCoordLng: process.env.MAP_COORD_LNG
 		}
 	},
 	plugins: [
