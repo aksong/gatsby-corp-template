@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { SolutionsPageTemplate } from "../../templates/Solutions-page";
+import { SolutionsPageTemplate } from "../../templates/solutions-page";
 
 const SolutionsPagePreview = ({ entry, widgetFor }) => {
 	const entrySolutions = entry.getIn(["data", "SolutionList"]);
