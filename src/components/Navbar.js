@@ -25,7 +25,7 @@ const Navbar = props => {
 			<div className="container">
 				<div className="navbar-brand left-burger">
 					<div
-						className={`navbar-burger burger left-burger ${navBarActiveClass}`}
+						className={`navbar-burger burger left-burger is-small ${navBarActiveClass}`}
 						data-target="navMenu"
 						onClick={() => toggleHamburger()}
 					>

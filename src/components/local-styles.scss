@@ -20,7 +20,8 @@ $navbar-item-hover-background-color: $brand-color;
 $navbar-tab-active-color: $brand-color-invert;
 $navbar-item-active-color: $brand-color;
 
-$navbar-height: "50px";
+$navbar-height: "45px";
+$navbar-padding-vertical: .5rem;
 
 @import "~bulma/bulma.sass";
 
@@ -49,9 +50,34 @@ $navbar-height: "50px";
   align-items: flex-start;
 }
 
-.navbar-brand.left-burger .navbar-burger {
-  margin-left: 0;
-  margin-right: 0;
+.navbar-burger.burger {
+  width: calc(#{$navbar-height});
+  height: calc(#{$navbar-height});
+}
+
+.navbar-brand.left-burger {
+  .navbar-burger {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.burger {
+  span {
+    width: 0.75rem;
+
+    &:nth-child(1) {
+      top: calc(50% - 0.28rem);
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 0.33rem);
+    }
+  }
 }
 
 .site {
