@@ -12,7 +12,7 @@ import { withPrefix } from "gatsby";
 const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();
 	return (
-		<div>
+		<>
 			<Helmet>
 				<html lang="en" className="has-navbar-fixed-top" />
 				<title>{title}</title>
@@ -29,10 +29,13 @@ const TemplateWrapper = ({ children }) => {
 				<meta property="og:url" content="/" />
 				<meta property="og:image" content={`${withPrefix("/")}img/homepage_image_sfw.jpg`} />
 			</Helmet>
-			<Navbar />
-			<div>{children}</div>
-			<Footer />
-		</div>
+			<div className="site">
+				<Navbar />
+				<div className="site-content">{children}</div>
+
+				<Footer />
+			</div>
+		</>
 	);
 };
 

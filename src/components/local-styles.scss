@@ -20,6 +20,8 @@ $navbar-item-hover-background-color: $brand-color;
 $navbar-tab-active-color: $brand-color-invert;
 $navbar-item-active-color: $brand-color;
 
+$navbar-height: "50px";
+
 @import "~bulma/bulma.sass";
 
 .social {
@@ -50,4 +52,15 @@ $navbar-item-active-color: $brand-color;
 .navbar-brand.left-burger .navbar-burger {
   margin-left: 0;
   margin-right: 0;
+}
+
+.site {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex-grow: 1;
 }

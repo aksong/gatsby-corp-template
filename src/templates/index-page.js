@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
 					strength={1000}
 					bgImageStyle={{ objectFit: "cover" }}
 				>
-					<div style={{ height: "95vh" }}>
+					<div style={{ height: "100vh" }}>
 						<Fade bottom>
 							<div className="hero-body">
 								<div style={{ height: "95vh" }}>
