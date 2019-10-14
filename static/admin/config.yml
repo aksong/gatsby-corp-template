@@ -125,6 +125,7 @@ collections:
 
       - file: "src/pages/solutions/index.md"
         label: "Solutions"
+        name: "solutions"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "solution" }
           - { label: "Title", name: "title", widget: "string" }
