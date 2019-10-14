@@ -2,6 +2,7 @@
 templateKey: press-release
 title: Sample Press Release
 featuredimage: /img/press/placeholder.png
+date: 2019-09-1T12:00:00.000Z
 url: https://google.com
 sortOrder: 1
 isActive: true

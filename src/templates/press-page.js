@@ -6,7 +6,7 @@ import { Parallax } from "react-parallax";
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const PressPageTemplate = ({ content, image, title, heading }) => (
+export const PressPageTemplate = ({ content, image, title, date, heading }) => (
 	<div className="container">
 		<div className="section">
 			<Parallax bgImage={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} strength={500} height={500}>
@@ -23,7 +23,7 @@ export const PressPageTemplate = ({ content, image, title, heading }) => (
 					</h2>
 				</div>
 			</Parallax>
-			<section className="section section--gradient">
+			<section className="section section--gradient">xxxxxxxxxxxx
 				<h3 className="has-text-weight-semibold is-size-2 has-text-centered">{heading}</h3>
 				<div className="section">
 					<div className="columns is-multiline is-centered"></div>
@@ -36,6 +36,7 @@ export const PressPageTemplate = ({ content, image, title, heading }) => (
 PressPageTemplate.propTypes = {
 	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 	title: PropTypes.string,
+	date: PropTypes.string,
 	heading: PropTypes.string,
 	content: PropTypes.string,
 	intro: PropTypes.array
@@ -49,6 +50,7 @@ const PressPage = ({ data }) => {
 			<PressPageTemplate
 				image={frontmatter.image}
 				title={frontmatter.title}
+				date={frrontmatter.date}
 				heading={frontmatter.heading}
 				description={frontmatter.description}
 			/>
@@ -70,6 +72,7 @@ export const PressPageQuery = graphql`
 			html
 			frontmatter {
 				title
+				date(formatString: "MMMM DD, YYYY")
 				image {
 					childImageSharp {
 						fluid(quality: 100) {

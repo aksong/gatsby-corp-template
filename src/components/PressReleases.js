@@ -15,6 +15,7 @@ const PressReleases = props => {
 						<div className="columns is-multiline" key={post.id}>
 							<div className="column">
 								<div className="is-size-4 has-text-weight-semibold">{post.frontmatter.title}</div>
+								<div className="has-text-black has-text-weight-semibold">{post.frontmatter.date}</div>
 								<div className="has-text-black">{post.excerpt}</div>
 							</div>
 						</div>

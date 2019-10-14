@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
-export const PressReleaseTemplate = ({ content, contentComponent, description, title, helmet }) => {
+export const PressReleaseTemplate = ({ content, contentComponent, description, title, date, helmet }) => {
 	const PostContent = contentComponent || Content;
 
 	return (
@@ -15,6 +15,7 @@ export const PressReleaseTemplate = ({ content, contentComponent, description, t
 				<div className="container content">
 					<h1>Press Release</h1>
 					<h2>{title}</h2>
+					<div className="has-text-weight-semibold">{date}</div>
 					<p>{description}</p>
 					<PostContent content={content} />
 				</div>
@@ -28,6 +29,7 @@ PressReleaseTemplate.propTypes = {
 	contentComponent: PropTypes.func,
 	description: PropTypes.string,
 	title: PropTypes.string,
+	date: PropTypes.string,
 	helmet: PropTypes.object
 };
 
@@ -47,6 +49,7 @@ const PressRelease = ({ data }) => {
 					</Helmet>
 				}
 				title={post.frontmatter.title}
+				date={post.frontmatter.date}
 			/>
 		</Layout>
 	);
