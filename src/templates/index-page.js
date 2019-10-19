@@ -7,11 +7,14 @@ import Fade from "react-reveal/Fade";
 import useSiteMetadata from "../components/SiteMetadata";
 
 import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+
 import PressReleaseList from "../components/PressReleaseList";
 
 import request from "superagent";
 
 export const IndexPageTemplate = ({
+	contentComponent,
 	image,
 	title,
 	heading,
@@ -21,6 +24,7 @@ export const IndexPageTemplate = ({
 	description,
 	intro
 }) => {
+	const PageContent = contentComponent || Content;
 	return (
 		<>
 			<div className="hero">
@@ -29,13 +33,13 @@ export const IndexPageTemplate = ({
 					strength={1000}
 					bgImageStyle={{ objectFit: "cover" }}
 				>
-					<div style={{ height: "100vh" }}>
+					<div style={{ height: "50vh" }}>
 						<Fade bottom>
 							<div className="hero-body">
-								<div style={{ height: "95vh" }}>
+								<div style={{ height: "45vh" }}>
 									<div
 										style={{
-											height: "85vh",
+											height: "45vh",
 											display: "flex",
 											lineHeight: "1",
 											justifyContent: "center",
@@ -91,14 +95,12 @@ export const IndexPageTemplate = ({
 														<div className="columns">
 															<div className="column is-12">
 																<h3 className="has-text-weight-semibold is-size-2 has-text-centered">{heading}</h3>
-																<p>{description}</p>
+																<HTMLContent markDownString={description} />
 															</div>
 														</div>
 														<div className="columns">
 															<div className="column is-12 has-text-centered">
-																<Link to="/products">
-																	See all products
-																</Link>
+																<Link to="/products">See all products</Link>
 															</div>
 														</div>
 													</div>
@@ -115,7 +117,9 @@ export const IndexPageTemplate = ({
 										<h2 className="is-size-3 has-text-centered">{secondarypitch.title}</h2>
 									</div>
 									<div className="tile">
-										<div className="has-text-centered">{secondarypitch.description}</div>
+										<div className="has-text-centered">
+											<HTMLContent markDownString={secondarypitch.description} />
+										</div>
 									</div>
 								</div>
 							</Fade>
@@ -161,6 +165,7 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<IndexPageTemplate
+				contentComponent={HTMLContent}
 				image={frontmatter.image}
 				title={frontmatter.title}
 				heading={frontmatter.heading}
